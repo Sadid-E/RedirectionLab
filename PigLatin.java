@@ -55,11 +55,13 @@ public class PigLatin {
     while (n.hasNextLine()) {
       String line = n.nextLine();
       Scanner w = new Scanner(line);
+      String newLine = "";
       while (w.hasNext()) {
-        System.out.print(pigLatinBest(w.next()));
-        System.out.print(" ");
+        String next = pigLatinBest(w.next());
+        next += " ";
+        newLine += next;
       }
-      System.out.print("\n");
+      System.out.println(newLine.substring(0,newLine.length()-1));
     }
   }
 
