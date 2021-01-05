@@ -17,11 +17,4 @@ public class PigLatin {
     return s;
   }
 
-  public static void main(String[] args) {
-    System.out.println(pigLatinSimple("mock"));
-    System.out.println(pigLatinSimple("pie"));
-    System.out.println(pigLatinSimple("David"));
-    System.out.println(pigLatinSimple("Aaron"));
-  }
-
 }
