@@ -31,8 +31,20 @@ public class PigLatin {
     if (b) {
       s = s.substring(2,s.length()) + s.substring(0,2) + "ay";
     } else {
-      pigLatinSimple(s);
+      return pigLatinSimple(s);
     }
+    return s;
+  }
+
+  public static String pigLatinBest(String s) {
+    s = s.toLowerCase();
+    if (!Character.isLetter(s.charAt(0))) {
+      s = s;
+    } else
+      if (!Character.isLetterOrDigit(s.charAt(s.length()-1))) {
+        s = pigLatin(s.substring(0,s.length()-1)) + s.substring(s.length()-1,s.length());
+      } else
+        return pigLatin(s);
     return s;
   }
 
