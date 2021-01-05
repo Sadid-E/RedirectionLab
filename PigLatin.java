@@ -17,4 +17,23 @@ public class PigLatin {
     return s;
   }
 
+  public static String pigLatin(String s) {
+    s = s.toLowerCase();
+    String[] digraphs = {"bl","br","ch","ck","cl","cr","dr","fl",
+    "fr","gh","gl","gr","ng","ph","pl","pr","qu","sc","sh","sk",
+    "sl","sm","sn","sp","st","sw","th","tr","tw","wh","wr"};
+    boolean b = false;
+    for (int i = 0; i < digraphs.length; i++) {
+      if (digraphs[i].equals(s.substring(0,2))) {
+          b = true;;
+      }
+    }
+    if (b) {
+      s = s.substring(2,s.length()) + s.substring(0,2) + "ay";
+    } else {
+      pigLatinSimple(s);
+    }
+    return s;
+  }
+
 }
